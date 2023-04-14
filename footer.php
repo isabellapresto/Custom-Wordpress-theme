@@ -1,8 +1,9 @@
 
 <footer id="footer">
-			<div class="container">
+			<!-- <div class="container">
 				<div class="row top">
 					<div class="col-xs-12 col-sm-6 col-md-4">
+
 						<h4>Kort om oss</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex.</p>
 						<p>Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis.</p>
@@ -42,7 +43,7 @@
 						<p>Copyright &copy; Grupp X, 2016</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</footer>
 
 	</div>
@@ -50,7 +51,6 @@
 	<?php
 	wp_footer();
 ?>
-
 
 </body>
 </html>
