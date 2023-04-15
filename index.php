@@ -1,8 +1,5 @@
-<?php
-/**
-* Template Name: blogg sida tema 
-**/
-?>
+<!-- ligger i page -->
+
 
 <?php 
 get_header();
@@ -41,4 +38,3 @@ get_header();
 		<?php 
 get_footer();
 ?>
-
