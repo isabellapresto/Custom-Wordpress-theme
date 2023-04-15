@@ -1,8 +1,3 @@
-<?php
-/**
-* Template Name: blogg sida tema 
-**/
-?>
 
 <?php 
 get_header();
@@ -10,17 +5,16 @@ get_header();
 
 		<main> 
 			<section>
-				<!-- //om jag tar bort detta får jag ut rätt på de andra sidorna -->
-				<!-- <div class="container">
+				<!-- //får man ha kvar det här? -->
+				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="hero"> -->
-							<!-- //ska inte vara hårdkodad -->
-								<img src="wp-content/themes/tema-Inlämningsuppgift-1/assets/img/city.jpg" /> 
-					
+							<div class="hero">
+							<!-- //är detta rätt? -->
+								<img src=<?php echo get_template_directory_uri().'/assets/img/city.jpg';?> /> 
+							
 								<div class="text">
 
-								<!-- content skrivs in i wp -->
 									<?php
         if ( have_posts() ) {
 
