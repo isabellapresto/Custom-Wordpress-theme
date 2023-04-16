@@ -16,6 +16,9 @@
 							}
 							?>
 						</div>
+
+
+						<!-- side bar? menu? hur fixar jag det här? -->
 						<aside id="secondary" class="col-xs-12 col-md-3">
 							<ul class="side-menu">
 								<li>
