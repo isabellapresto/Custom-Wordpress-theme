@@ -36,20 +36,25 @@ add_action ('init','menus');
 
 //Köar in alla css-filer
 function register_css_styles(){
-wp_enqueue_style ('bootstarp_css', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), 1.0, 'all'); 
-wp_enqueue_style ('fontawsome', get_template_directory_uri() . '/assets/css/font-awsome.css', array(), 1.0, 'all'); 
-wp_enqueue_style ('style', get_template_directory_uri() . '/assets/css/style.css', array(), 1.0, 'all');
+$version = wp_get_theme() -> get('Version');
+wp_register_style ('bootstarp_bella', get_template_directory_uri() . '/assets/css/bootstrap-bella.css', array(), '3.3.7', 'all'); 
+wp_enqueue_style ('bootstarp_bella');
+
+wp_register_style ('style', get_template_directory_uri() . '/assets/css/style-bella.css', array('bootstarp_bella'), $version, 'all');
+wp_enqueue_style ('style');
+
+wp_register_style ('fontawsome_bella', get_template_directory_uri() . '/assets/css/font-awsome-bella.css', array(), '4.6.3', 'all'); 
+wp_enqueue_style ('fontawsome_bella');
 }
 
 add_action ('wp_enqueue_scripts', 'register_css_styles');
 
 //Köar in JS
-
-
 function register_script(){
- wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/script.js', array(), 1.0, true );
- wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/jquery.js', array(), 1.0, true );
-
+wp_register_style ('jquery_bella', get_template_directory_uri() . 'assets/js/jquery-bella.js', array(), false, true);
+wp_enqueue_script ('jquery_bella');
+wp_register_style ('js_bella', get_template_directory_uri() . 'assets/js/script-bella.js', array('jquery_bella'), true, true);
+wp_enqueue_script ('js_bella');
 }
 
 add_action ('wp_enqueue_scripts', 'register_script');
@@ -71,3 +76,15 @@ function register_footer() {
 add_action( 'widgets_init', 'register_footer' );
 
 dynamic_sidebar('testwidget');
+
+function pagination(){
+    echo "<ul>";
+    if (get_previous_posts_link()){
+        echo "<li>"; previous_posts_link("Föregående inlägg"); echo "</li>";
+    }
+    if (get_next_posts_link()){
+        echo "<li>"; next_posts_link("Föregående inlägg"); echo "</li>" ; }
+        echo "<ul>";
+  
+    }
+
