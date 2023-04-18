@@ -5,13 +5,9 @@
 	
 	<title><?php wp_title();?></title>
 	
-
-
-	
-	<?php
+<?php
 	wp_head();
 	?>
-
 
 </head>
 
@@ -66,8 +62,6 @@
 				'meny' => 'primary',
 				'container' => '',
 				'theme_location' => 'primary',
-				//denna gär att jag ser min egen klass i inspektorn inte wp - css blir fel 
-				// 'items_wrap' => '<ul id="" class="menu">%3$s<ul>'
 			)
 			);
 

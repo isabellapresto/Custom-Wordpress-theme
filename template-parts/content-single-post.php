@@ -18,5 +18,5 @@
    <i class="fa fa-tag"></i> <?php the_category(', '); ?>
   </li>
  </ul>
- <p><?php the_excerpt() ?></p>
+ <p><?php the_content() ?></p>
 </article>

@@ -1,6 +1,3 @@
-<!-- ligger i page -->
-
-
 <?php 
 get_header();
 ?>
@@ -24,7 +21,6 @@ get_header();
 							}
 							?>
 								
-		
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,3 @@
-<!-- //done -->
 <?php get_header(); ?>
 
 <main>

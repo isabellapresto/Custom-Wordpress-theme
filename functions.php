@@ -1,22 +1,13 @@
 <?php 
-//support för tema 
 function theme_support() {
  add_theme_support ('title_tag');
- //gör att man kam lägga till ny logga i wp (anländs inte nu men för framtiden)
  add_theme_support ('custom-logo');
- //bilder
  add_theme_support ('post-thumbnails');
  add_theme_support ('menus');
  add_theme_support ('widges');
-
 } 
 
 add_action('after_setup_theme','theme_support');
-
-// nav meny och footer
-
-// add_action ('after_setup_theme' , 'register_my_menu');
-
 
 function menus (){
 
@@ -26,13 +17,10 @@ function menus (){
   'side-menu' => "Sidebar menu"
  );
 
- register_nav_menus($locations);
+register_nav_menus($locations);
 }
 
 add_action ('init','menus');
-
-// register_sidebar();
-// dynamic_sidebar();
 
 //Köar in alla css-filer
 function register_css_styles(){
@@ -49,42 +37,97 @@ wp_enqueue_style ('fontawsome_bella');
 
 add_action ('wp_enqueue_scripts', 'register_css_styles');
 
-//Köar in JS
-function register_script(){
-wp_register_style ('jquery_bella', get_template_directory_uri() . 'assets/js/jquery-bella.js', array(), false, true);
-wp_enqueue_script ('jquery_bella');
-wp_register_style ('js_bella', get_template_directory_uri() . 'assets/js/script-bella.js', array('jquery_bella'), true, true);
-wp_enqueue_script ('js_bella');
-}
 
-add_action ('wp_enqueue_scripts', 'register_script');
+//js
+function load_js(){
+    wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-bella.js', array(), false, true);
+    wp_enqueue_script('jquery');
+    
+ wp_register_script('script-bella', get_template_directory_uri() . '/assets/js/script-bella.js', array('jquery'), true, true);
+    
+   wp_enqueue_script('script-bella');
+    
+}
+    
+
+    
+ //Köar in js
+ add_action('wp_enqueue_scripts', 'load_js');
+// function register_script(){
+// wp_register_script ('jquery-bella', get_template_directory_uri() . 'assets/js/jquery-bella.js', array(), false, true);
+// wp_enqueue_script ('jquery-bella');
+// wp_register_script ('script-bella', get_template_directory_uri() . 'assets/js/script-bella.js', array('jquery-bella'), true, true);
+// wp_enqueue_script ('script-bella');
+// }
+
+// add_action ('wp_enqueue_scripts', 'register_script');
+
+
+// function register_script(){
+//     wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/script.js', array(), true );
+//     wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/jquery.js', array(), true );
+   
+//    }
+   
+//    add_action ('wp_enqueue_scripts', 'register_script');
+
+
+
 
 
 function register_footer() {
  register_sidebar(
      array(
-         'name'          => __( 'Footer', 'labb1' ),
-         'id'            => 'footer',
-         'description'   => __( 'Widgets i detta område visas i footern.', 'labb1' ),
-         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-         'after_widget'  => '</div>',
+         'name'          => 'Footer', 
+         'id'            => 'footer1',
+         'description'   => 'Widgets i detta område visas i footern.', 
+         'before_widget' => '',
+         'after_widget'  => '',
          'before_title'  => '<h4 class="widget-title">',
          'after_title'   => '</h4>',
      )
  );
 }
+
 add_action( 'widgets_init', 'register_footer' );
 
-dynamic_sidebar('testwidget');
-
-function pagination(){
-    echo "<ul>";
-    if (get_previous_posts_link()){
-        echo "<li>"; previous_posts_link("Föregående inlägg"); echo "</li>";
-    }
-    if (get_next_posts_link()){
-        echo "<li>"; next_posts_link("Föregående inlägg"); echo "</li>" ; }
-        echo "<ul>";
+// function pagination(){
+//     echo "<ul>";
+//     if (get_previous_posts_link()){
+//         echo "<li>"; previous_posts_link("Föregående inlägg"); echo "</li>";
+//     }
+//     if (get_next_posts_link()){
+//         echo "<li>"; next_posts_link("Föregående inlägg"); echo "</li>" ; }
+//         echo "<ul>";
   
+//     }
+
+function custom_pagination() {
+    global $wp_query;
+    
+    $total_pages = $wp_query->max_num_pages;
+    
+    if ( $total_pages > 1 ) {
+        $current_page = max( 1, get_query_var( 'paged' ) );
+        
+        echo '<div class="pagination">';
+        echo '<h2 class="screen-reader-text">Inläggsnavigering</h2>';
+        
+        echo '<a class="prev page-numbers" href="'.get_pagenum_link( $current_page - 1 ).'">Föregående</a>';
+        
+        for ( $i = 1; $i <= $total_pages; $i++ ) {
+            if ( $i == $current_page ) {
+                echo '<span class="page-numbers current">'.$i.'</span>';
+            } else {
+                echo '<a class="page-numbers" href="'.get_pagenum_link( $i ).'">'.$i.'</a>';
+            }
+        }
+        
+        echo '<a class="next page-numbers" href="'.get_pagenum_link( $current_page + 1 ).'">Nästa</a>';
+        echo '</div>';
     }
+}
+
+
+
 
