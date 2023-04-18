@@ -1,0 +1,4 @@
+- Jag har behållt sidomenyn på blogsidan statisk och använt mig av permalänkar för att länka till rätt sidor
+- Jag valde att skapa min footer med hjälp av widgets, footern kan redigeras från admin panelen i wordpress
+- Jag har använt mig av contact form 7 för att skapa ett kontaktformulär på kontaktsidan
+- Jag har lagt till en användare med användarnamnet och lösenordet medie-admin  
