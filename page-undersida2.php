@@ -18,19 +18,17 @@
 							?>
 						
       </div>
-						<aside id="secondary side-menu" class="col-xs-12 col-md-3 col-md-pull-9">
-							
-       <?php wp_nav_menu(
+						<aside id="secondary" class="col-xs-12 col-md-3 col-md-pull-9">
+				
+							<?php wp_nav_menu(
 			array(
-		
+				'menu_class' => 'side-menu',
+				'container' => '',
+				'theme_location' => 'side-menu',
 			)
 			);
-
-   // register_sidebar();
-   //     dynamic_sidebar();
-
 			?>
-							</ul>
+			
 						</aside>
 					</div>
 				</div>

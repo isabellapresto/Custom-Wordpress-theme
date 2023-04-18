@@ -5,14 +5,10 @@
 	
 	<title><?php wp_title();?></title>
 	
-
-	<!-- get css  -->
-	
-	<?php
+<?php
 	wp_head();
 	?>
 
-	<!-- <script src="js/jquery.js"></script> -->
 </head>
 
 <body>
@@ -23,20 +19,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-8 col-sm-6">
-					<!-- the_title();?> -->
-
-					
-
-						<a class="logo" href="index.html">Labb 1</a>
+						<a class="logo" href="<?php echo home_url();?>">Labb 1</a>
 					</div>
 					<div class="col-sm-6 hidden-xs">
-						<form id="searchform" class="searchform">
+						<?php get_search_form();?>
+						<!-- <form id="searchform" class="searchform">
 							<div>
 								<label class="screen-reader-text">Sök efter:</label>
 								<input type="text" />
 								<input type="submit" value="Sök" />
 							</div>
-						</form>
+						</form> -->
 					</div>
 					<div class="col-xs-4 text-right visible-xs">
 						<div class="mobile-menu-wrap">
@@ -58,19 +51,10 @@
 			</form>
 		</div>
 
-
-
-
-
-
-
-
-
 		<nav id="nav">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-
 
 					<?php
 		wp_nav_menu(
@@ -78,8 +62,6 @@
 				'meny' => 'primary',
 				'container' => '',
 				'theme_location' => 'primary',
-				//denna gär att jag ser min egen klass i inspektorn inte wp - css blir fel 
-				// 'items_wrap' => '<ul id="" class="menu">%3$s<ul>'
 			)
 			);
 

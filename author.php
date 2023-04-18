@@ -1,3 +1,4 @@
+
 <?php 
 get_header();
 ?>
@@ -49,7 +50,7 @@ get_header();
 				<div class="container">
 					<div class="row">
 						<div id="primary" class="col-xs-12 col-md-9">
-							<h1>Arkiv: Oktober 2016</h1>
+							<h1>Peter Pärmenäs</h1>
 							<article>
 								<img src="img/washington.jpg" />
 								<h2 class="title">
@@ -67,24 +68,6 @@ get_header();
 									</li>
 								</ul>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex. Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis. In sed mi mi. Praesent condimentum sollicitudin nibh. Vivamus vulputate purus quis volutpat fringilla. Ut tortor libero, semper eget dolor vel, hendrerit tempus dui. Suspendisse dictum efficitur blandit. In porta scelerisque nulla ac placerat.</p>
-							</article>
-							<article>
-								<img src="img/paris.jpg" />
-								<h2 class="title">
-									<a href="inlagg.html">Mitt andra inlägg</a>
-								</h2>
-								<ul class="meta">
-									<li>
-										<i class="fa fa-calendar"></i> 1 januari, 2016
-									</li>
-									<li>
-										<i class="fa fa-user"></i> <a href="forfattare.html">Peter Pärmenäs</a>
-									</li>
-									<li>
-										<i class="fa fa-tag"></i> <a href="kategori.html">Kategori 1</a>, <a href="kategori.html">Kategori 3</a>
-									</li>
-								</ul>
-								<p>Integer quis eros at urna pulvinar mollis eget quis ex. Nam fringilla tellus at ligula consequat, sed sagittis ipsum ultricies. Nunc pretium bibendum enim id iaculis. Nam sed leo non sem aliquam imperdiet dictum vitae magna. Phasellus ac accumsan dolor, quis congue mauris. Maecenas vehicula, arcu sed congue euismod, mi urna rhoncus nunc, et feugiat arcu tellus vitae odio. Sed luctus vel lorem vel dictum. Suspendisse potenti. Proin vel efficitur ex. Suspendisse scelerisque rutrum mattis. In sed laoreet augue, non maximus ante. Nam a rhoncus ligula. Aliquam at aliquet lorem. Suspendisse non risus tincidunt, gravida augue non, fringilla libero.</p>
 							</article>
 							<article>
 								<img src="img/london.jpg" />

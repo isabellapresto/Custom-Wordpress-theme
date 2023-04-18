@@ -1,5 +1,4 @@
-<!-- //done -->
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <main>
 			<section>
@@ -13,11 +12,11 @@
 									the_post();
 									the_content();
 								}
-							}
+							};
 							?>
 
 		</div> 
 			</section>
 		</main> 
 
-		<?php get_footer() ?>
+		<?php get_footer(); ?>
