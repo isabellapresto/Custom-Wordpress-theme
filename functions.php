@@ -1,4 +1,5 @@
 <?php 
+//lägger till support
 function theme_support() {
  add_theme_support ('title_tag');
  add_theme_support ('custom-logo');
@@ -9,6 +10,7 @@ function theme_support() {
 
 add_action('after_setup_theme','theme_support');
 
+//skapar menyer
 function menus (){
 
  $locations = array(
@@ -16,7 +18,7 @@ function menus (){
   'footer' => "Footer menu items",
   'side-menu' => "Sidebar menu"
  );
-
+//registrerar menyer - nav meny och sido meny
 register_nav_menus($locations);
 }
 
@@ -38,7 +40,7 @@ wp_enqueue_style ('fontawsome_bella');
 add_action ('wp_enqueue_scripts', 'register_css_styles');
 
 
-//js
+//Köar in mina js filer
 function load_js(){
     wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-bella.js', array(), false, true);
     wp_enqueue_script('jquery');
@@ -48,33 +50,10 @@ function load_js(){
    wp_enqueue_script('script-bella');
     
 }
-    
 
-    
- //Köar in js
  add_action('wp_enqueue_scripts', 'load_js');
-// function register_script(){
-// wp_register_script ('jquery-bella', get_template_directory_uri() . 'assets/js/jquery-bella.js', array(), false, true);
-// wp_enqueue_script ('jquery-bella');
-// wp_register_script ('script-bella', get_template_directory_uri() . 'assets/js/script-bella.js', array('jquery-bella'), true, true);
-// wp_enqueue_script ('script-bella');
-// }
 
-// add_action ('wp_enqueue_scripts', 'register_script');
-
-
-// function register_script(){
-//     wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/script.js', array(), true );
-//     wp_enqueue_script ('script', get_template_directory_uri() . 'assets/js/jquery.js', array(), true );
-   
-//    }
-   
-//    add_action ('wp_enqueue_scripts', 'register_script');
-
-
-
-
-
+//funktion för att skapa widgets i footer
 function register_footer() {
  register_sidebar(
      array(
@@ -91,17 +70,7 @@ function register_footer() {
 
 add_action( 'widgets_init', 'register_footer' );
 
-// function pagination(){
-//     echo "<ul>";
-//     if (get_previous_posts_link()){
-//         echo "<li>"; previous_posts_link("Föregående inlägg"); echo "</li>";
-//     }
-//     if (get_next_posts_link()){
-//         echo "<li>"; next_posts_link("Föregående inlägg"); echo "</li>" ; }
-//         echo "<ul>";
-  
-//     }
-
+//skapar pagination
 function custom_pagination() {
     global $wp_query;
     
