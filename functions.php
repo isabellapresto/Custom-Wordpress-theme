@@ -18,6 +18,7 @@ function menus (){
   'footer' => "Footer menu items",
   'side-menu' => "Sidebar menu"
  );
+ 
 //registrerar menyer - nav meny och sido meny
 register_nav_menus($locations);
 }
